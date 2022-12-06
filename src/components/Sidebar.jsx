@@ -5,6 +5,22 @@ import { RiCloseLine } from 'react-icons/ri'
 import { logo } from '../assets'
 import { links } from '../assets/constants'
 
-const Sidebar = () => <div>Sidebar</div>
+const NavLinks = () => (
+  <div className="mt-10">
+    {links.map((item) => (
+      <NavLink>{item.name}</NavLink>
+    ))}
+  </div>
+)
+const Sidebar = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  return (
+    <div className="md:flex hidden fiex-col w-[240px] py-10 px-4 bg-[#191624]">
+      <img src={logo} alt="logo" className="w-full h-14 object-contain" />
+      <NavLinks />
+    </div>
+  )
+}
 
 export default Sidebar
