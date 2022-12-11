@@ -52,6 +52,17 @@ const TopPlay = () => {
           ))}
         </div>
       </div>
+
+      <div clasName="w-full flex flex-col mt-8">
+        <div className="w-full flex flex-col">
+          <div className="flex flex-row justify-between items-center">
+            <h2 className="text-white font-bold text-2xl">Top Artists</h2>
+            <Link to="/top-artists">
+              <p className="text-gray-300 text-base cusor-pointer">See more</p>
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
