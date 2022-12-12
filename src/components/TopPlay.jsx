@@ -61,6 +61,31 @@ const TopPlay = () => {
               <p className="text-gray-300 text-base cusor-pointer">See more</p>
             </Link>
           </div>
+          <Swiper
+            slidesPerView="auto"
+            spaceBetween={5}
+            freeMode
+            centeredSlides
+            centeredSlidesBounds
+            modules={[FreeMode]}
+            className="mt-4"
+          >
+            {topPlays?.map((song, i) => (
+              <SwiperSlide
+                key={song.key}
+                style={{ width: '25%', height: 'auto' }}
+                className="shadow-lg rounded-full animate-slideright"
+              >
+                <Link to={`/artists/${song?.artists[0].adamid}`}>
+                  <img
+                    src={song?.images.background}
+                    alt="name"
+                    className="rounded-full w-full object-cover"
+                  />
+                </Link>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </div>
